@@ -1,0 +1,174 @@
+##slot = ["apple", "cat",881,543,56,"pinic",345,776,2423,"lunch",234.234,85,21452,"that",6676,23,74,12,"this",584,1235,4734,243]
+##
+##howmany = 0
+##
+##for elements in slot:
+##    try:
+##        int(elements) * 234
+##        
+##    except ValueError:
+##        howmany += 1
+##
+##print "Yo, you have " + str(howmany) + " words in yo list, homie. You might to go check that out"
+##        
+
+#----------------------------------------------
+##phonebook = {
+##    '702': 'Las Vegas, NV',
+##    '270': 'Bowling Green, KY',
+##    '502': 'Louisville, KY',
+##    '808': 'Honolulu, HI',
+##    '336': 'Greensboro, NC',
+##    '775': 'Las Vegas, NV',
+##    '919': 'Raliegh, NC',
+##    '312': 'Chicago I',
+##    '630': 'Chicago II',
+##    '815': 'Chicago III',
+##    '708': 'Inglewood'};
+##
+##again = "Y"
+##while again <> 'N':
+##    lookupNum = raw_input("Put in a number fool!: ")
+##
+##    try:
+##        print phonebook[lookupNum] + "\n"
+##        again = raw_input("Wanna look up another? [Y/N]: ").upper() or "Y"
+##        
+##    except Exception:
+##        
+##        print "That's not in the phonebook, homie"
+##        
+##        newAreaCode = raw_input("Do you want to add it? ["+ lookupNum +"]: ") or str(lookupNum)
+##
+##        if len(newAreaCode) > 3 or len(newAreaCode)< 3:
+##                newAreaCode = raw_input("Don't be a dummy! Enter a VALID new area code: ")
+##                
+##        elif len(newAreaCode) == 3:
+##            if newAreaCode in phonebook:
+##                print "\nThat's already in the phonebook!\n"
+##                incomplete = True
+##                newAreaCode = raw_input("Don't be a dummy! Enter a *NEW* new area code: ")
+##                    
+##            else:
+##                newLocation = raw_input("Enter the city and or state of new area code: ")
+##                phonebook.update({newAreaCode:newLocation})
+##                print "Thanks for adding " + newLocation + " to the phonebook!\n"
+##                
+##                incomplete = False
+##                    
+####        if newNum == "Y":
+####            incomplete = True
+####            newAreaCode = raw_input("Please enter the new area code: ")
+#### while incomplete == True:
+
+#----------------------------------------------
+        
+import random
+mynumber = random.randrange(1,6)
+#print mynumber
+
+user_credits = 10000
+dubdown = 'Y'
+
+stats =[]
+
+print "\nYou have: " + str(user_credits) + " user credits."
+placebet = 2
+winnings = 0
+loses = 0
+stats.append(mynumber)
+
+looper = 0
+
+while looper < 999:
+#while dubdown == 'Y':
+    
+##        if user_credits == 0:
+##            print "Get yo broke ass outta here!"
+##            print "\nYou lost a total of " + str(loses) +" credits."
+##            print "And won " + str(winnings) + " credits. (" + str(int(winnings - loses)) +")"
+##            break
+##        
+    #placebet = int(raw_input ("\nPlace your bet ["+str(placebet)+"]: ") or placebet)
+    placebet = 2
+    mynumber = random.randrange(1,6)
+    looper += 1
+    stats.append(mynumber)
+##
+##        if user_credits < placebet:
+##            print "You can't afford to bet that! Try again, foo!"
+##            placebet = raw_input ("Place your bet: ") or user_credits
+##        
+##        myguess = raw_input("\nGuess my number, pick a number between 1 and 10: ") or 0
+
+##        while int(myguess) <=0 or int(myguess) > 5:
+##            print "Take a damn VALID guess!"
+##            myguess = raw_input("\nGuess my number, pick a number between 1 and 10: ") or 0
+
+    ##if int(myguess) == mynumber:
+    if random.randrange(1,6) == mynumber:
+        winnings += int(placebet)
+        
+        #print "\nThat was a lucky guess\n"
+        user_credits += int(placebet)
+
+        #print "You won " + str(placebet) + " credits which means you have " + str(user_credits)
+        #dubdown = raw_input("Another bet? [Y/N]: ").upper() or "Y"
+        #dubdown = "Y"
+        
+        #mynumber = random.randrange(1,6)
+        #print mynumber
+
+
+    ##elif int(myguess) <> mynumber:
+    elif random.randrange(1,6) <> mynumber:
+        loses += int(placebet)
+        #print "HAHA! Sucka! Try again!\n"
+        user_credits -= int(placebet)
+
+
+        #print "You lost! Now you have " + str(user_credits) + " left...SUCKA!."
+        #dubdown = raw_input("Another bet? [Y/N]: ").upper() or "Y"
+        #dudown = "Y"
+
+
+    
+#if dubdown == 'N':
+#print "Come on back next time to the PyGamble!"
+
+a,b,c,d,e = 0,0,0,0,0
+
+for each in stats:    
+    if int(each) == 1:
+        a += 1
+    if int(each) == 2:
+        b += 1
+    if int(each) == 3:
+        c += 1
+    if int(each) == 4:
+        d += 1
+    if int(each) == 5:
+        e += 1
+
+
+print "\n"
+print len(stats)
+print str("%.2f" % (float(a)/len(stats)*100)) + "% of the chosen was 1."
+print str("%.2f" % (float(b)/len(stats)*100)) + "% of the chosen was 2."
+print str("%.2f" % (float(c)/len(stats)*100)) + "% of the chosen was 3."
+print str("%.2f" % (float(d)/len(stats)*100)) + "% of the chosen was 4."
+print str("%.2f" % (float(e)/len(stats)*100)) + "% of the chosen was 5."
+
+
+print "\n"
+
+print "Winings: " + str(winnings)
+print "Loses: " + str(loses)
+print "Pocketbook: " + str(user_credits)
+
+endgame = raw_input("End this")
+
+
+
+
+
